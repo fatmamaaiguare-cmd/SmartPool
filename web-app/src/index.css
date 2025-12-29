@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aquatic theme variables */
+:root{
+  --primary: #0ea5e9;
+  --secondary: #06b6d4;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --background: #f8fafc;
+}
+
+.dark {
+  --background: #0f172a;
+}
+
+body {
+  background: var(--background);
+}
