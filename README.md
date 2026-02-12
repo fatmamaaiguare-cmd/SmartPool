@@ -1,56 +1,49 @@
-# 🏊 SmartPool: Cloud-Connected IoT Intelligent System
+# 🏊 SmartPool: IoT & Cloud-Connected Intelligent Swimming Pool
 
-[![Python](https://img.shields.io/badge/IoT-ESP8266-blue.svg)](https://www.espressif.com/)
-[![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61DAFB.svg)](https://reactjs.org/)
-[![Firebase](https://img.shields.io/badge/Cloud-Firebase-FFCA28.svg)](https://firebase.google.com/)
-[![TensorFlow](https://img.shields.io/badge/AI-TensorFlow-FF6F00.svg)](https://www.tensorflow.org/)
+[![IoT](https://img.shields.io/badge/IoT-ESP8266-orange.svg)](https://www.espressif.com/)
+[![Cloud](https://img.shields.io/badge/Cloud-Firebase%20%26%20GCP-yellow.svg)](https://firebase.google.com/)
+[![ML](https://img.shields.io/badge/ML-TensorFlow-ff6f00.svg)](https://www.tensorflow.org/)
+[![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-blue.svg)](https://reactjs.org/)
 
-SmartPool is a comprehensive end-to-end IoT solution designed to transform traditional swimming pool maintenance into an automated, intelligent process[cite: 22, 530]. By integrating real-time sensor data with Cloud Computing and Machine Learning, the system ensures optimal water quality, enhanced safety, and energy efficiency[cite: 25, 308].
+[cite_start]SmartPool is a complete end-to-end solution designed to transform traditional swimming pool management into an automated, intelligent, and connected system[cite: 5, 19, 530]. [cite_start]By combining IoT hardware with Cloud Computing and Machine Learning, the system ensures water quality, optimizes energy consumption, and provides real-time monitoring[cite: 22, 25, 546].
 
 ## 🌟 Key Features
-- **Real-Time Monitoring:** Continuous tracking of water pH, temperature, and water levels[cite: 43, 123].
--**Autonomous Control:** Intelligent pump management via a 5V Relay based on sensor thresholds to prevent equipment damage and save energy[cite: 49, 52, 94].
-- **AI-Powered Anomaly Detection:** A TensorFlow model with **~92% accuracy** detects chemical imbalances or abnormal physical parameters[cite: 331, 545].
-- **Cloud Infrastructure:** Secure data historization and analysis using Firebase and Google Cloud Platform (GCP)[cite: 24, 137, 240].
-- **Instant Notifications:** Automated alerts via Email (SendGrid) and Push Notifications when critical thresholds are exceeded[cite: 236, 237, 256].
-- **Interactive Dashboard:** A modern Web application for remote control and data visualization[cite: 26, 424].
+- [cite_start]**Real-Time Monitoring:** Continuous tracking of water pH, temperature, and water levels using specialized sensors[cite: 43, 533].
+- [cite_start]**Automated Pump Control:** Intelligent pump activation based on sensor thresholds to maintain pool health without human intervention[cite: 49, 52, 191].
+- [cite_start]**AI Anomaly Detection:** A TensorFlow model with **~92% accuracy** that detects critical anomalies in pool parameters[cite: 331, 450, 537].
+- [cite_start]**Cloud Integration:** Data synchronization with **Firebase Realtime Database** and **Firestore** for historical analysis[cite: 24, 228, 246].
+- [cite_start]**User Dashboard:** A modern web interface (React + Vite) for remote control and live data visualization[cite: 26, 423, 536].
+- [cite_start]**Smart Alerts:** Automated email notifications via **SendGrid** for critical events like low water levels or dangerous pH[cite: 237, 256, 451].
 
-## 🛠️ Technical Stack
-
-### IoT & Hardware
-- **Microcontroller:** ESP8266 NodeMCU[cite: 80].
-- **Sensors:** - HC-SR04 (Ultrasonic Water Level)[cite: 85, 144].
-  - DS18B20 (Waterproof Temperature)[cite: 86, 160].
-  - Analog pH Sensor[cite: 87, 165].
-- **Actuators:** 5V Relay for pump control[cite: 93, 94].
-
-### Cloud & Backend
-- **Firebase:** Realtime Database, Firestore (NoSQL), Authentication, and Hosting[cite: 245, 246, 248].
-- **Google Cloud Platform:** Cloud Functions (Serverless logic), BigQuery (Big Data analytics), and AI Platform[cite: 252, 253, 254].
-- **Communication:** Secure HTTPS protocols with API key management[cite: 365, 383, 391].
-
-### Frontend & AI
-- [cite_start]**Web App:** React.js, Vite, and Chart.js[cite: 423, 425].
+## 🛠️ Tech Stack
+- [cite_start]**Hardware:** ESP8266 NodeMCU, HC-SR04 (Ultrasonic), DS18B20 (Temperature), Analog pH Sensor, 5V Relay[cite: 80, 85, 87, 94].
+- [cite_start]**Cloud Infrastructure:** Firebase Authentication, Firestore, Cloud Functions, Google AI Platform, and BigQuery[cite: 244, 250, 253, 277].
 - [cite_start]**Machine Learning:** TensorFlow (Classifier for anomaly detection)[cite: 304, 324].
+- [cite_start]**Communication:** Wi-Fi with secure HTTPS protocol[cite: 137, 365, 383].
+- [cite_start]**Frontend:** React, Vite, Tailwind CSS, Chart.js[cite: 423, 425].
 
 ## 🚀 System Architecture
+1. [cite_start]**Acquisition:** ESP8266 collects raw data from sensors[cite: 123, 127].
+2. [cite_start]**Processing:** Local logic handles immediate pump control while data is sent to the Cloud[cite: 128, 134, 137].
+3. [cite_start]**Analysis:** Google Cloud Functions and AI Platform process data for predictive insights[cite: 139, 252, 275].
+4. [cite_start]**Visualization:** Users interact with the system via the Web/Mobile Dashboard[cite: 264, 426].
 
-The system follows a clear functional cycle:
-1. **Acquisition:** Sensors gather raw data[cite: 123].
-2. **Processing:** ESP8266 converts signals and checks local safety thresholds[cite: 128].
-3. **Cloud Sync:** Data is transmitted via Wi-Fi to Firebase[cite: 137].
-4. **Analysis:** Google Cloud Functions and AI models analyze trends and detect anomalies[cite: 252, 274].
-5. **Action:** Automated relay triggering or user notification via the Web App[cite: 134, 137, 426].
+## 🔧 Installation & Setup
 
-## 📁 Project Structure
-- `/iot_firmware`: C++/Arduino code for ESP8266[cite: 564].
-- `/web_app`: React + Vite frontend source code[cite: 565].
-- `/cloud_functions`: Node.js scripts for backend automation[cite: 566].
-- `/ml_model`: TensorFlow training scripts and exported models[cite: 567].
+### 1. Hardware Setup
+- Connect sensors to the ESP8266 according to the following mapping:
+  - [cite_start]**HC-SR04:** TRIG -> D0, ECHO -> D1 [cite: 98]
+  - [cite_start]**DS18B20:** Data -> D2 [cite: 98]
+  - [cite_start]**pH Sensor:** Analog Out -> A0 [cite: 98]
+  - [cite_start]**Relay:** IN -> D3 [cite: 98]
 
-## 🔗 Live Demo & Source
-- **GitHub Repository:** [https://github.com/fatma123m/SmartPool](https://github.com/fatma123m/SmartPool) 
-- **Live Application:** [https://piscineintelligent.web.app/](https://piscineintelligent.web.app/) [cite: 570]
+### 2. Firmware
+- Navigate to the `/firmware` folder.
+- [cite_start]Configure your Wi-Fi credentials and Firebase API keys in the code[cite: 361, 389].
+- [cite_start]Upload the C++/Arduino code to the ESP8266.
 
----
-*Developed by Fatma Maaiguare and team as part of the Master ADIA program at Université Ibn Zohr[cite: 5, 9, 17].*
+### 3. Web Application
+```bash
+cd web-app
+npm install
+npm run dev
