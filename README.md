@@ -23,7 +23,7 @@ SmartPool is a complete end-to-end solution designed to transform traditional sw
 - **Frontend:** React, Vite, Tailwind CSS, Chart.js.
 
 ## 🚀 System Architecture
-1. **Acquisition:** ESP8266 collects raw data from sensors[cite: 123, 127].
+1. **Acquisition:** ESP8266 collects raw data from sensors.
 2. **Processing:** Local logic handles immediate pump control while data is sent to the Cloud.
 3. **Analysis:** Google Cloud Functions and AI Platform process data for predictive insights.
 4. **Visualization:** Users interact with the system via the Web/Mobile Dashboard.
