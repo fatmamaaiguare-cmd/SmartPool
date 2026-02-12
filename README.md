@@ -5,58 +5,45 @@
 [![ML](https://img.shields.io/badge/ML-TensorFlow-ff6f00.svg)](https://www.tensorflow.org/)
 [![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-blue.svg)](https://reactjs.org/)
 
-[cite_start]SmartPool is a complete end-to-end solution designed to transform traditional swimming pool management into an automated, intelligent, and connected system[cite: 5, 19, 530]. [cite_start]By combining IoT hardware with Cloud Computing and Machine Learning, the system ensures water quality, optimizes energy consumption, and provides real-time monitoring[cite: 22, 25, 546].
+SmartPool is a complete end-to-end solution designed to transform traditional swimming pool management into an automated, intelligent, and connected system. By combining IoT hardware with Cloud Computing and Machine Learning, the system ensures water quality, optimizes energy consumption, and provides real-time monitoring.
 
-🏊 SmartPool: Intelligent IoT & Cloud Pool Management
+## 🌟 Key Features
+- **Real-Time Monitoring:** Continuous tracking of water pH, temperature, and water levels using specialized sensors.
+- **Automated Pump Control:** Intelligent pump activation based on sensor thresholds to maintain pool health without human intervention.
+- **AI Anomaly Detection:** A TensorFlow model with **~92% accuracy** that detects critical anomalies in pool parameters.
+- **Cloud Integration:** Data synchronization with **Firebase Realtime Database** and **Firestore** for historical analysis.
+- **User Dashboard:** A modern web interface (React + Vite) for remote control and live data visualization.
+- **Smart Alerts:** Automated email notifications via **SendGrid** for critical events like low water levels or dangerous pH.
 
-SmartPool est une solution complète visant à transformer la gestion manuelle des piscines en un système intelligent et autonome. Ce projet illustre la convergence de l'IoT, du Cloud Computing et du Machine Learning pour garantir la qualité de l'eau et optimiser la consommation énergétique.
-+3
+## 🛠️ Tech Stack
+- **Hardware:** ESP8266 NodeMCU, HC-SR04 (Ultrasonic), DS18B20 (Temperature), Analog pH Sensor, 5V Relay.
+- **Cloud Infrastructure:** Firebase Authentication, Firestore, Cloud Functions, Google AI Platform, and BigQuery.
+- **Machine Learning:** TensorFlow (Classifier for anomaly detection).
+- **Communication:** Wi-Fi with secure HTTPS protocol.
+- **Frontend:** React, Vite, Tailwind CSS, Chart.js.
 
-🌟 Caractéristiques Clés
+## 🚀 System Architecture
+1. **Acquisition:** ESP8266 collects raw data from sensors[cite: 123, 127].
+2. **Processing:** Local logic handles immediate pump control while data is sent to the Cloud.
+3. **Analysis:** Google Cloud Functions and AI Platform process data for predictive insights.
+4. **Visualization:** Users interact with the system via the Web/Mobile Dashboard.
 
-Surveillance en Temps Réel : Mesure continue du pH, de la température et du niveau d'eau.
+## 🔧 Installation & Setup
 
+### 1. Hardware Setup
+- Connect sensors to the ESP8266 according to the following mapping:
+  -**HC-SR04:** TRIG -> D0, ECHO -> D1 
+  -**DS18B20:** Data -> D2 [cite: 98]
+  -**pH Sensor:** Analog Out -> A0 
+  -**Relay:** IN -> D3 
 
-Contrôle Automatique : Activation intelligente de la pompe via un relais selon des seuils définis.
-+2
+### 2. Firmware
+- Navigate to the `/firmware` folder.
+- Configure your Wi-Fi credentials and Firebase API keys in the code.
+- Upload the C++/Arduino code to the ESP8266.
 
-
-Intelligence Artificielle : Détection d'anomalies avec un modèle TensorFlow atteignant 92% de précision.
-+1
-
-
-Alertes Intelligentes : Notifications automatiques envoyées par e-mail via SendGrid en cas de valeurs critiques.
-+1
-
-
-Interface Web & Mobile : Dashboard développé avec React et Vite pour visualiser les données et contrôler la pompe à distance.
-+2
-
-🛠️ Stack Technique
-
-Hardware : ESP8266 NodeMCU, capteur ultrasonique HC-SR04, capteur de température DS18B20 et capteur de pH analogique.
-+1
-
-
-Cloud (Firebase & GCP) : Realtime Database pour la synchronisation instantanée, Cloud Functions pour le traitement serverless et BigQuery pour l'analyse statistique.
-+2
-
-
-Machine Learning : Modèle de classification binaire (normal / anomalie) entraîné avec TensorFlow.
-
-
-Sécurité : Communication sécurisée via le protocole HTTPS et authentification des utilisateurs via Firebase Authentication.
-+2
-
-🚀 Installation & Configuration
-
-Montage Physique : Connectez les capteurs à l'ESP8266 (HC-SR04 sur D0/D1, DS18B20 sur D2, pH sur A0 et Relais sur D3).
-
-
-Firmware : Configurez vos identifiants Wi-Fi et vos clés API Firebase dans le code Arduino/C++.
-
-3 Application Web :
-
-cd smartpool-web
+### 3. Web Application
+```bash
+cd web-app
 npm install
 npm run dev
